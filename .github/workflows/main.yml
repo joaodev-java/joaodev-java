@@ -1,5 +1,5 @@
 name: generate animation
-
+##novo
 on:
   schedule:
     - cron: "0 0 * * *" 
@@ -16,13 +16,12 @@ jobs:
     timeout-minutes: 5
     
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
-
       - name: generate github-contribution-grid-snake.svg
-        uses: Platane/snk/svg-only@v2
+        uses: Platane/snk@v3
         with:
+          # seu usuário do github
           github_user_name: joaodev-java
+          # as saídas que queremos gerar
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
